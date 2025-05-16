@@ -4,56 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfólio | Felipe Salustiano</title>
+
+  <!-- Fontes e ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+  <!-- ESTILOS GERAIS -->
   <style>
-    .foto-perfil {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 20px;
-      border: 3px solid #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    
-    .topo {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      text-align: left;
-    }
-    
-    .contatos {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-top: 1rem;
-    }
-    
-    .contatos a {
-      font-size: 1.1rem;
-      color: #004aad;
-      background-color: #ffffff;
-      padding: 10px 15px;
-      border-radius: 8px;
-      text-decoration: none;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-      width: fit-content;
-    }
-    
-    .contatos a:hover {
-      background-color: #004aad;
-      color: white;
-      transform: translateX(5px);
-    }
-    
-    
     * {
       box-sizing: border-box;
       scroll-behavior: smooth;
     }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -61,44 +23,147 @@
       color: #333;
       animation: fadeIn 1s ease-in-out;
     }
+
     @keyframes fadeIn {
       0% { opacity: 0; transform: translateY(20px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes slideFadeIn {
+      0% { opacity: 0; transform: translateX(-50px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    /* CABEÇALHO */
     header {
       background: linear-gradient(90deg, #004aad, #002f6c);
       color: white;
-      padding: 3rem 2rem;
-      text-align: center;
-      animation: fadeDown 1s ease-in-out;
+      padding: 2rem 1.5rem;
+      animation: slideFadeIn 1s ease forwards;
     }
-    @keyframes fadeDown {
-      0% { opacity: 0; transform: translateY(-30px); }
+
+    .topo {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .foto-perfil {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .info {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .info h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    .info p {
+      margin: 4px 0;
+    }
+
+    .icones-contato {
+      display: flex;
+      gap: 15px;
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .icones-contato a {
+      color: white;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+      font-size: 28px;
+    }
+
+    .icones-contato a:hover {
+      transform: scale(1.2);
+    }
+
+    /* SESSÕES GERAIS */
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(30px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+
     section {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
-      animation: fadeIn 1.2s ease-in-out;
     }
+
     h2 {
       color: #004aad;
       border-bottom: 2px solid #004aad;
       padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
     }
+
+    /* PROJETOS */
+    .grid-projetos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .projeto h3 {
+      margin-top: 0;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #00357b;
+    }
+
+    .projeto .tags {
+      margin: 0.5rem 0 1rem;
+    }
+
+    .projeto .tags span {
+      background-color: #e0ecff;
+      color: #004aad;
+      border-radius: 20px;
+      padding: 4px 10px;
+      font-size: 0.8rem;
+      margin-right: 5px;
+      display: inline-block;
+      font-weight: 600;
+    }
+
+    .projeto a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: #004aad;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
     .projeto {
-      background-color: #fff;
+      background-color: #ffffff;
+      border-radius: 12px;
       padding: 1rem;
-      margin-bottom: 1.5rem;
-      border-left: 5px solid #004aad;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: fadeUp 0.8s ease;
     }
+
     .projeto:hover {
-      transform: scale(1.02);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
     }
+
+    /* RODAPÉ */
     footer {
       background: linear-gradient(90deg, #004aad, #002f6c);
       color: white;
@@ -107,272 +172,203 @@
       margin-top: 2rem;
       animation: fadeUp 1s ease-in-out;
     }
-    @keyframes fadeUp {
-      0% { opacity: 0; transform: translateY(30px); }
-      100% { opacity: 1; transform: translateY(0); }
-    }
+
+    /* LINKS E LISTAS */
     a {
       color: #004aad;
       text-decoration: none;
       transition: color 0.3s ease;
     }
+
     a:hover {
       text-decoration: underline;
       color: #002f6c;
     }
+
     ul {
       list-style-type: disc;
       padding-left: 1.2rem;
     }
-    #toggleLang {
+
+    /* RESPONSIVIDADE */
+    @media (max-width: 600px) {
+      .topo {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .icones-contato {
+        justify-content: center;
+        position: static;
+        margin-top: 1rem;
+      }
+    }
+
+    /* BOTÃO VOLTAR AO TOPO */
+    #voltar-topo {
       position: fixed;
-      top: 10px;
-      right: 10px;
-      padding: 0.5rem 1rem;
+      bottom: 25px;
+      right: 25px;
       background-color: #004aad;
       color: white;
       border: none;
-      border-radius: 8px;
+      border-radius: 50%;
+      padding: 12px 15px;
+      font-size: 20px;
       cursor: pointer;
-      z-index: 999;
-      transition: background-color 0.3s ease;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+      display: none;
+      z-index: 1000;
     }
-    #toggleLang:hover {
+
+    #voltar-topo:hover {
+      transform: scale(1.1);
       background-color: #002f6c;
+    }
+
+    /* NOME E DETALHES */
+    .nome {
+      font-size: 2.5rem;
+      font-weight: 900;
+      margin: 0;
+      color: #ffffff;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 1.5px;
+    }
+
+    .cargo {
+      font-size: 1.2rem;
+      margin: 0.3rem 0;
+      color: #d0e7ff;
+      font-weight: 500;
+    }
+
+    .localidade {
+      font-size: 1rem;
+      color: #aac6e5;
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <button id="toggleLang">English</button>
 
+  <!-- CABEÇALHO -->
   <header>
     <div class="topo">
-      <img src="img/foto-perfil.jpg" alt="Foto de perfil" class="foto-perfil">
-      <div>
-        <h1 id="nome">Felipe Salustiano Moreira</h1>
-        <p id="titulo">Ciência de Dados e Inteligência Artificial na CESAR School | Certificado em Análise de Dados pela EBAC</p>
-        <p>Olinda - PE📍</p>
+      <img src="img/foto-perfil.jpg" alt="Foto de perfil de Felipe Salustiano" class="foto-perfil">
+      <div class="info">
+        <h1 id="nome" class="nome">Felipe Salustiano Moreira</h1>
+        <p class="cargo"><i class="fas fa-database"></i> Analista de Dados</p>
+        <p class="localidade"><i class="fas fa-map-marker-alt"></i> Olinda - PE</p>
+      </div>
+      <div class="icones-contato">
+        <a href="mailto:felipe.salustianom@email.com" target="_blank" title="Enviar e-mail"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/felipesalustianomoreira" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/FelipeSalustiano" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
       </div>
     </div>
   </header>
 
+  <!-- SOBRE MIM -->
   <section>
-    <h2 id="sobreTitulo">Sobre mim</h2>
-    <p id="sobre1">
-      Olá! Sou Felipe, um apaixonado por dados, comunicação e aprendizado contínuo. Iniciei minha jornada em Ciência da Computação pela UNINASSAU, mas encontrei minha verdadeira paixão na área de dados. Atualmente, curso Banco de Dados com Ênfase em Ciência de Dados na CESAR School.
-    </p>
-    <p id="sobre2">
-      Trabalho na MV Sistemas, onde participei de projetos importantes, como a migração de documentos e implementação de IA, entre plataformas internas. Tenho habilidades sólidas em SQL, Python, Google Sheets e Git, além de facilidade para trabalhar em equipe e liderar com empatia.
-    </p>
+    <h2>Sobre mim</h2>
+    <p>Me chamo Felipe Salustiano Moreira, sou estudante de Ciência de Dados e IA na CESAR School. Comecei minha graduação em Ciência da Computação na UNINASSAU, mas migrei para a CESAR em busca de mais oportunidades e alinhamento com minha paixão por dados e tecnologia.</p>
+    <p>Tenho certificação em Análise de Dados pela EBAC, onde desenvolvi minhas habilidades relacionadas à visualização e manipulação de dados, aprendizado de máquina e criação de dashboards. Atualmente atuo como desenvolvedor na MV Sistemas, onde crio soluções para o setor de saúde e desenvolvo tanto minhas habilidades técnicas quanto corporativas.</p>
+    <p>Sou movido por desafios e tenho foco em análise de dados, ciência de dados e machine learning. Busco transformar dados em soluções reais que gerem impacto.</p>
   </section>
 
+  <!-- HABILIDADES TÉCNICAS -->
   <section>
-    <h2 id="habilidadesTitulo">Habilidades Técnicas</h2>
-    <ul id="habilidadesLista">
-      <li>Python (Pandas, Numpy, Matplotlib, Seaborn, Plotly, Scikit-learn, Spark)</li>
-      <li>BigData</li>
-      <li>Machine learning</li>
-      <li>R</li>
-      <li>Java</li>
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>SQL (MySQL, Oracle)</li>
-      <li>Google Looker Studio, Excel, Google Sheets</li>
-      <li>Git & GitHub</li>
+    <h2>Habilidades Técnicas</h2>
+    <ul>
+      <li>Linguagens: Python, Java, SQL</li>
+      <li>HTML e CSS</li>
+      <li>Bibliotecas: Pandas, Numpy, Matplotlib, Seaborn, Scikit-learn, PySpark</li>
+      <li>Ferramentas: Google Looker Studio, Power BI, Google Sheets, Excel</li>
+      <li>Banco de Dados: MySQL, Oracle</li>
+      <li>Controle de Versão: Git e GitHub</li>
     </ul>
   </section>
 
+  <!-- HABILIDADES COMPORTAMENTAIS -->
   <section>
-    <h2 id="softSkillsTitulo">Habilidades Comportamentais</h2>
-    <ul id="softSkillsLista">
+    <h2>Habilidades Comportamentais</h2>
+    <ul>
       <li>Comunicação eficaz</li>
       <li>Trabalho em equipe</li>
       <li>Resolução de problemas</li>
       <li>Resiliência</li>
       <li>Liderança</li>
-      <li>Pensamento Analítico</li>
+      <li>Pensamento analítico e crítico</li>
     </ul>
   </section>
 
-
+  <!-- PROJETOS -->
   <section>
     <h2 id="projetosTitulo">Projetos</h2>
+    <div class="grid-projetos">
+      <!-- PROJETO 1 -->
+      <div class="projeto">
+        <h3><i class="fas fa-chart-line"></i> Kaggle - Preços de Matérias-Primas Agrícolas</h3>
+        <p>Análise exploratória de dados históricos (1990-2020) de commodities agrícolas, utilizando Python para identificar tendências e sazonalidades.</p>
+        <div class="tags">
+          <span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Numpy</span>
+        </div>
+        <a href="https://github.com/FelipeSalustiano/Agricultural_Raw_Material_prices" target="_blank">Ver no GitHub →</a>
+      </div>
 
-    <div class="projeto">
-      <h3 id="projeto1Titulo">Kaggle - Preços de Matérias-Primas Agrícolas</h3>
-      <p id="projeto1Texto">
-        Análise exploratória de dados históricos (1990-2020) de commodities agrícolas, utilizando Python para identificar tendências e sazonalidades.
-        <br />
-        <a href="https://github.com/FelipeSalustiano/Agricultural_Raw_Material_prices" target="_blank">GitHub-></a>
-      </p>
-    </div>
+      <!-- PROJETO 2 -->
+      <div class="projeto">
+        <h3><i class="fas fa-shopping-cart"></i> EBAC - Análise de Vendas da Amazon</h3>
+        <p>Análise de dados de vendas com foco em padrões de consumo, influência de descontos nas avaliações e oportunidades de negócio.</p>
+        <div class="tags">
+          <span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Looker Studio</span>
+        </div>
+        <a href="https://github.com/FelipeSalustiano/Projeto-Analise-de-Dados-Amazon" target="_blank">Ver no GitHub →</a>
+      </div>
 
-    <div class="projeto">
-      <h3 id="projeto2Titulo">Kaggle - Estações de Carregamento de Veículos Elétricos</h3>
-      <p id="projeto2Texto">
-        Análise com Python sobre dados globais de estações de carregamento, promovendo insights sobre mobilidade elétrica.
-        <br />
-        <a href="https://github.com/FelipeSalustiano/ev_stations_analysis" target="_blank">GitHub-></a>
-      </p>
-    </div>
-
-    <div class="projeto">
-      <h3 id="projeto3Titulo">Projeto MV Sistemas - Migração de Documentos</h3>
-      <p id="projeto3Texto">
-        Responsável pela análise, organização e migração de documentos do Editor 2 para o Editor 3 da plataforma MV, otimizando processos e garantindo integridade de dados.
-      </p>
+      <!-- PROJETO 3 -->
+      <div class="projeto">
+        <h3><i class="fas fa-university"></i> EBAC - Análise de Campanha Bancária</h3>
+        <p>Estudo dos dados de uma campanha de marketing para identificar fatores que influenciam a adesão de clientes a produtos bancários.</p>
+        <div class="tags">
+          <span>Python</span><span>Pandas</span><span>Matplotlib</span><span>Seaborn</span><span>Looker Studio</span>
+        </div>
+        <a href="https://github.com/FelipeSalustiano/Analise-Campanha-Bancaria" target="_blank">Ver no GitHub →</a>
+      </div>
     </div>
   </section>
 
+  <!-- EXPERIÊNCIAS -->
   <section>
-    <h2 id="formacaoTitulo">Formação Acadêmica</h2>
-    <ul id="formacaoLista">
-      <li id="formacao1"><strong>CESAR School</strong> – Banco de Dados com Ênfase em Ciência de Dados (Cursando)</li>
-      <li id="formacao2"><strong>UNINASSAU</strong> – Ciência da Computação (Trancado)</li>
-    </ul>
-  </section>
-
-  <section id="experiencias">
-    <h2 id="experienciasTitulo">Experiências Profissionais</h2>
-  
+    <h2>Experiências Profissionais</h2>
     <div class="projeto">
-      <h3 id="experienciaEmpresa">MV Sistemas</h3>
-      <p><strong id="experienciaCargoLabel">Cargo:</strong> <span id="experienciaCargo">Desenvolvedor</span></p>
-      <p><strong id="experienciaPeriodoLabel">Período:</strong> <span id="experienciaPeriodo">2024 - Atual</span></p>
-      <p id="experienciaDescricao">
-        Atuação em projetos de desenvolvimento e migração de documentos eletrônicos, além de suporte e resolução de problemas no software interno da empresa.
-      </p>
+      <h3>MV Sistemas</h3>
+      <p><strong>Cargo:</strong> Desenvolvedor</p>
+      <p><strong>Período:</strong> 2024 - Atual</p>
+      <p>Atuação em projetos de desenvolvimento e migração de documentos eletrônicos, além de suporte e resolução de problemas no software interno da empresa.</p>
     </div>
-  
   </section>
-    
 
-  <section id="contato">
-    <h2 id="contatoTitulo">Contato</h2>
-    <div class="contatos">
-      <a href="mailto:felipe.salustianom@email.com" target="_blank" title="Enviar e-mail">
-        📧 Email
-      </a>
-      <a href="https://www.linkedin.com/in/felipesalustianomoreira" target="_blank" title="LinkedIn">
-        💼 LinkedIn
-      </a>
-      <a href="https://github.com/FelipeSalustiano" target="_blank" title="GitHub">
-        💻 GitHub
-      </a>
-    </div>
-  </section>
-  
+  <!-- RODAPÉ -->
   <footer>
     <p>© 2025 Felipe Salustiano Moreira</p>
   </footer>
 
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="voltar-topo" title="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
   <script>
-    const toggleButton = document.getElementById('toggleLang');
-    let lang = 'pt';
-
-    const translations = {
-      pt: {
-        toggle: 'English',
-        titulo: 'Ciência de Dados e Inteligência Artificial na CESAR School | Certificado em Análise de Dados pela EBAC',
-        sobreTitulo: 'Sobre mim',
-        sobre1: 'Olá! Sou Felipe, um apaixonado por dados, comunicação e aprendizado contínuo. Iniciei minha jornada em Ciência da Computação pela UNINASSAU, mas encontrei minha verdadeira paixão na área de dados. Atualmente, curso Banco de Dados com Ênfase em Ciência de Dados na CESAR School.',
-        sobre2: 'Trabalho na MV Sistemas, onde participei de projetos importantes, como a migração de documentos e implementação de IA, entre plataformas internas. Tenho habilidades sólidas em SQL, Python, Google Sheets e Git, além de facilidade para trabalhar em equipe e liderar com empatia.',
-        habilidadesTitulo: 'Habilidades Técnicas',
-        softSkillsTitulo: 'Habilidades Comportamentais',
-        softSkillsLista: [
-          'Comunicação eficaz',
-          'Trabalho em equipe',
-          'Resolução de problemas',
-          'Resiliência',
-          'Liderança',
-          'Pensamento Analítico'],
-        projetosTitulo: 'Projetos',
-        projeto1Titulo: 'Kaggle - Preços de Matérias-Primas Agrícolas',
-        projeto1Texto: 'Análise exploratória de dados históricos (1990-2020) de commodities agrícolas, utilizando Python para identificar tendências e sazonalidades.',
-        projeto2Titulo: 'Kaggle - Estações de Carregamento de Veículos Elétricos',
-        projeto2Texto: 'Análise com Python sobre dados globais de estações de carregamento, promovendo insights sobre mobilidade elétrica.',
-        projeto3Titulo: 'Projeto MV Sistemas - Migração de Documentos',
-        projeto3Texto: 'Responsável pela análise, organização e migração de documentos do Editor 2 para o Editor 3 da plataforma MV, otimizando processos e garantindo integridade de dados.',
-        formacaoTitulo: 'Formação Acadêmica',
-        formacao1: '<strong>CESAR School</strong> – Banco de Dados com Ênfase em Ciência de Dados (Cursando)',
-        formacao2: '<strong>UNINASSAU</strong> – Ciência da Computação (Trancado)',
-        experienciasTitulo: 'Experiência Profissional',
-        experienciaEmpresa: 'MV Sistemas',
-        experienciaCargo: 'Desenvolvedor',
-        experienciaPeriodo: '2024 - Atual',
-        experienciaDescricao: 'Atuação em projetos de desenvolvimento e migração de documentos eletrônicos, além de suporte e resolução de problemas no software interno da empresa.',
-        contatoTitulo: 'Contato'
-      },
-      en: {
-        toggle: 'Português',
-        titulo: 'Data Science and Artificial Intelligence at CESAR School | Certified in Data Analysis by EBAC',
-        sobreTitulo: 'About Me',
-        sobre1: "Hi! I'm Felipe, passionate about data, communication and continuous learning. I started in Computer Science at UNINASSAU, but found my true passion in the data field. I'm currently studying Database with a focus on Data Science at CESAR School.",
-        sobre2: 'I work at MV Sistemas, where I participated in key projects such as document migration and AI implementation across internal platforms. I have solid skills in SQL, Python, Google Sheets, and Git, and I am great at teamwork and empathetic leadership.',
-        habilidadesTitulo: 'Hard Skills',
-        softSkillsTitulo: 'Soft Skills',
-        softSkillsLista: [
-          'Effective communication',
-          'Teamwork',
-          'Problem-solving',
-          'Resilience',
-          'leadership',
-          'Analytical thinking'],
-        projetosTitulo: 'Projects',
-        projeto1Titulo: 'Kaggle - Agricultural Raw Material Prices',
-        projeto1Texto: 'Exploratory analysis of historical (1990-2020) agricultural commodity data using Python to identify trends and seasonality.',
-        projeto2Titulo: 'Kaggle - Electric Vehicle Charging Stations',
-        projeto2Texto: 'Python-based analysis on global charging station data, promoting insights into electric mobility.',
-        projeto3Titulo: 'MV Systems Project - Document Migration',
-        projeto3Texto: 'Responsible for analyzing, organizing, and migrating documents from Editor 2 to Editor 3 on the MV platform, optimizing processes and ensuring data integrity.',
-        formacaoTitulo: 'Academic Background',
-        formacao1: '<strong>CESAR School</strong> – Database with Emphasis on Data Science (Ongoing)',
-        formacao2: '<strong>UNINASSAU</strong> – Computer Science (Paused)',
-        experienciasTitulo: 'Professional Experience',
-        experienciaEmpresa: 'MV Sistemas',
-        experienciaCargo: 'Developer',
-        experienciaPeriodo: '2024 - Present',
-        experienciaDescricao: 'Working on projects related to document development and migration. Also involved in problem-solving on the company’s internal software.',
-        contatoTitulo: 'Contact'
-      }
+    const botaoTopo = document.getElementById('voltar-topo');
+    window.onscroll = function () {
+      botaoTopo.style.display = (window.scrollY > 300) ? 'block' : 'none';
     };
-
-    toggleButton.addEventListener('click', () => {
-      lang = lang === 'pt' ? 'en' : 'pt';
-      const t = translations[lang];
-      document.getElementById('titulo').textContent = t.titulo;
-      document.getElementById('sobreTitulo').textContent = t.sobreTitulo;
-      document.getElementById('sobre1').textContent = t.sobre1;
-      document.getElementById('sobre2').textContent = t.sobre2;
-      document.getElementById('habilidadesTitulo').textContent = t.habilidadesTitulo;
-      document.getElementById('softSkillsTitulo').textContent = t.softSkillsTitulo;
-      const softSkillsLista = document.getElementById('softSkillsLista');
-      softSkillsLista.innerHTML = '';
-      t.softSkillsLista.forEach(skill => {
-        const li = document.createElement('li');
-        li.textContent = skill;
-        softSkillsLista.appendChild(li);
-      });
-      document.getElementById('experienciasTitulo').textContent = t.experienciasTitulo;
-      document.getElementById('experienciaEmpresa').textContent = t.experienciaEmpresa;
-      document.getElementById('experienciaCargo').textContent = t.experienciaCargo;
-      document.getElementById('experienciaCargoLabel').textContent = lang === 'pt' ? 'Cargo:' : 'Role:';
-      document.getElementById('experienciaPeriodo').textContent = t.experienciaPeriodo;
-      document.getElementById('experienciaPeriodoLabel').textContent = lang === 'pt' ? 'Período:' : 'Period:';
-      document.getElementById('experienciaDescricao').textContent = t.experienciaDescricao;
-      document.getElementById('projetosTitulo').textContent = t.projetosTitulo;
-      document.getElementById('projeto1Titulo').textContent = t.projeto1Titulo;
-      document.getElementById('projeto1Texto').childNodes[0].textContent = t.projeto1Texto + '\n        ';
-      document.getElementById('projeto2Titulo').textContent = t.projeto2Titulo;
-      document.getElementById('projeto2Texto').childNodes[0].textContent = t.projeto2Texto + '\n        ';
-      document.getElementById('projeto3Titulo').textContent = t.projeto3Titulo;
-      document.getElementById('projeto3Texto').textContent = t.projeto3Texto;
-      document.getElementById('formacaoTitulo').textContent = t.formacaoTitulo;
-      document.getElementById('formacao1').innerHTML = t.formacao1;
-      document.getElementById('formacao2').innerHTML = t.formacao2;
-      document.getElementById('contatoTitulo').textContent = t.contatoTitulo;
-      toggleButton.textContent = t.toggle;
-    });
+    botaoTopo.onclick = () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
   </script>
+
 </body>
 </html>
